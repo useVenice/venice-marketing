@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function Footer() {
     return (
-        <div className="bg-venice-footer-black h-40 mt-40">
+        <div className="bg-venice-footer-black h-40 mt-20">
             <div className="container p-14 max-w-screen-md">
                 <div className="flex justify-between">
                     <Image src='/assets/venice-logo.svg' alt='Venice Logo' width={102} height={32} />

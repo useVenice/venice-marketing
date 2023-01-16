@@ -14,6 +14,8 @@ export default function VeniceLandingPage() {
         <SyncInPipeOutSection />
         <GiveYourselfSuperpowersSection />
         <ValuePropositionsSection />
+        <BuildTomorrowTodaySection />
+        <GreaterGoodSection />
       </Container>
       <Footer />
     </>
@@ -69,10 +71,9 @@ function SyncInPipeOutSection() {
 
 function GiveYourselfSuperpowersSection() {
   return (
-    <div className="mt-14 grid grid-cols-1">
-      <h1 className="font-sans font-bold text-3xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
-        Give yourself<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;superpowers
+    <div className="mt-14 md:mt-20 grid grid-cols-1">
+      <h1 className="font-sans text-center font-bold text-3xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
+        Give yourself superpowers
       </h1>
       <div className="grid grid-cols-2 mx-10 md:mx-20 mt-6">
         <PersonaFragment imagePath="/assets/persona-developer.svg" name="Developers" text=" use Venice as a unified financial database for their teams & products" />
@@ -195,5 +196,61 @@ function ValuePropCustomizeAndExtend() {
       valueImagePath="/assets/veniceToGithub.svg"
       valueImageAltText="Join Venice's open source community"
       valueText="Data source not supported? Teach Venice new things, or customize existing integrations." />
+  )
+}
+
+/* Build tomorrow, today */
+
+function BuildTomorrowTodaySection() {
+  return (
+    <div className="mt-14 md:mt-20 grid grid-cols-1">
+      <h1 className="text-center font-sans font-bold text-3xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
+        Build tomorrow, today
+      </h1>
+      <div className="mx-auto max-w-screen-sm place-self-center">
+        <p className="mt-6 text-center font-sans font-medium text-lg md:text-2xl text-venice-offwhite">
+          <span>Our vision is to</span>
+          <span className="text-venice-green"> enable the frictionless movement of financial data </span>
+          <span>through the power of the open source community.</span>
+        </p>
+        <Image src="/assets/integrations-pipeline.svg" alt="Venice is building the future of financial pipelines" className="mt-10 mx-auto" width={371} height={343} />
+        <div className="ml-4 place-self-center mt-2 grid grid-cols-1 font-sans font-light text-md md:text-xl text-venice-offwhite">
+          <p className="text-center mt-6 font-medium">
+            <span>The road to being </span>
+            <span className="text-venice-green">the backend for finance.</span>
+          </p>
+          <p className="mt-6">
+            <span className="font-bold text-venice-green">Today: </span>
+            <span>Venice can provide you with unified financial data in minutes—accessible via SQL & direct database access.</span>
+          </p>
+          <p className="mt-6">
+            <span className="font-bold text-venice-green">Phase 1: </span>
+            <span>Venice will power more of everything you do with your financial data, starting with <span className="font-bold">Pipelines</span> to sync data to and from the tools you use most. </span>
+          </p>
+          <p className="mt-6">
+            <span className="font-bold text-venice-green">Phase 2: </span>
+            <span>Building on top of <span className="font-bold">VeniceDB</span> and <span className="font-bold">Pipelines</span>, we’ll work with our community to make building financial apps & user experiences effortless for all.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function GreaterGoodSection() {
+  return (
+    <div className="mt-14 md:mt-20 grid grid-cols-1">
+      <h1 className="text-center font-sans font-bold text-3xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
+        For the greater good
+      </h1>
+      <div className="flex mx-auto max-w-screen-sm">
+        <Image className="mt-2" src='/assets/handshake.svg' alt="Our mission" width={75} height={75} />
+        <div className="ml-4 mt-2">
+          <p className="font-sans font-light text-lg text-venice-offwhite mt-2">
+            Help us enable the frictionless movement of financial data & give back 1 billion years of happy, stable life to the working class.
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }
