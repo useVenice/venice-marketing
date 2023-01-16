@@ -91,6 +91,11 @@
   font-weight: 700;
   font-style: normal;
 }
+@media (min-width: 768px) {
+  .montserrat-light-13px, .montserrat-bold-13px {
+    font-size: 15px;
+  }
+}
 
 /* Montserrat 15 */
 .montserrat-light-15px {
