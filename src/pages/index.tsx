@@ -8,8 +8,8 @@ import { ReactFragment } from "react"
 export default function VeniceLandingPage() {
   return (
     <>
+      <Navigation />
       <Container>
-        <Navigation />
         <HeroSection />
         <SyncInPipeOutSection />
         <GiveYourselfSuperpowersSection />
@@ -26,21 +26,21 @@ export default function VeniceLandingPage() {
 
 function HeroSection() {
   return (
-    <div className="mt-20">
-      <div className="flex">
-        <h1 className="font-montserrat font-bold text-3xl md:text-6xl leading-tight min-w-[234px]">
+    <div className="mt-10 lg:mt-20">
+      <div className="flex justify-between">
+        <div className="font-montserrat font-bold text-3xl md:text-5xl lg:text-6xl leading-tight min-w-[234px]">
           <span className="text-venice-offwhite">Instant </span>
           <span className="text-venice-green">SQL </span><br />
           <span className="text-venice-offwhite">access to your </span><br />
           <span className="text-venice-green">financial data</span>
-          <div className="flex min-w-[240px] min-h-[23px] max-h-[30px] relative h-auto">
+          <div className="min-w-[240px] min-h-[23px] max-h-[23px] relative h-auto pr-4 mt-2">
             <Image fill src="/assets/hero-underline.svg" alt="Underline" style={{ height: "100%", width: "100%" }} />
           </div>
-        </h1>
-        <Image className="ml-10 md:ml-40 mb-8" src="/assets/sql-search.svg" alt="SQL search built in" width={244} height={144} />
+        </div>
+        <Image className="pl-6 md:pl-2 mr-4 mb-4" src="/assets/sql-search.svg" alt="SQL search built in" width={244} height={144} />
       </div>
       <>
-        <p className="font-sans font-light text-lg md:text-2xl text-venice-offwhite mt-10">
+        <p className="font-sans font-light text-lg md:text-2xl text-venice-offwhite mt-4 lg:mt-10">
           Save weeks with the open-source data infrastructure trusted by data analysts, personal finance geeks, and developers to unify & access their finances in the most powerful & flexible ways.
         </p>
       </>
@@ -58,8 +58,8 @@ function SyncInPipeOutSection() {
     <div className="mt-14 grid grid-cols-1">
       <Image src="/assets/sync-in-pipe-out.svg" alt="Sync banks to Venice's unified database" className="place-self-center" width={363} height={407} />
       <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
-        <p className="mt-6 font-sans font-medium text-lg md:text-2xl text-venice-green">Venice is your unified financial database.</p>
-        <p className="font-sans font-light text-md md:text-lg text-venice-offwhite">
+        <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green">Venice is your unified financial database.</p>
+        <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite">
           Continuously sync data from over 10,000 financial institutions & multiple data providers in minutes, saving yourself hours of manual input & expensive copy/paste mistakes.
         </p>
       </div>
@@ -72,10 +72,10 @@ function SyncInPipeOutSection() {
 function GiveYourselfSuperpowersSection() {
   return (
     <div className="mt-14 md:mt-20 grid grid-cols-1">
-      <h1 className="font-sans text-center font-bold text-3xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
+      <h1 className="font-sans text-center font-bold text-2xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
         Give yourself superpowers
       </h1>
-      <div className="grid grid-cols-2 mx-10 md:mx-20 mt-6">
+      <div className="grid grid-cols-2 md:mx-20 mt-2 lg:mt-6">
         <PersonaFragment imagePath="/assets/persona-developer.svg" name="Developers" text=" use Venice as a unified financial database for their teams & products" />
         <PersonaFragment imagePath="/assets/persona-analysts.svg" name="Data analysts" text=" use Venice to consolidate revenue & reporting into a unified database" />
         <PersonaFragment imagePath="/assets/persona-geeks.svg" name="Personal finance geeks" text=" use Venice to keep their spreadsheets up-to-date & build wealth faster" />
@@ -107,7 +107,7 @@ function PersonaFragment(props: PersonaProps) {
 
 function ValuePropositionsSection() {
   return (
-    <div className="mt-14 mx-auto max-w-screen-sm">
+    <div className="mt-6 lg:mt-14 mx-auto max-w-screen-sm">
       <ValuePropDashboards />
       <ValuePropGoogleSheetsOrCSV />
       <ValuePropHeadlessDatabase />
@@ -125,13 +125,13 @@ type ValuePropositionProps = {
 function ValueProposition(props: ValuePropositionProps) {
   const { headerFragment, valueImagePath, valueImageAltText, valueText, valueCode } = props;
   return (
-    <div className="mt-10">
-      <div className="font-sans font-medium text-xl text-venice-offwhite">
+    <div className="mt-4 lg:mt-10">
+      <div className="font-sans font-medium text-md md:text-xl text-venice-offwhite">
         {headerFragment}
       </div>
       <div className="flex">
-        <Image className="mt-2" src={valueImagePath} alt={valueImageAltText} width={106} height={36} />
-        <div className="ml-4 mt-2">
+        <Image src={valueImagePath} alt={valueImageAltText} width={106} height={36} />
+        <div className="ml-4">
           <p className="font-sans font-light text-venice-offwhite mt-2">{valueText}</p>
           <p className="font-ptMono text-sm text-venice-gray mt-2">{valueCode}</p>
         </div>
@@ -214,20 +214,20 @@ function BuildTomorrowTodaySection() {
           <span>through the power of the open source community.</span>
         </p>
         <Image src="/assets/integrations-pipeline.svg" alt="Venice is building the future of financial pipelines" className="mt-10 mx-auto" width={371} height={343} />
-        <div className="ml-4 place-self-center mt-2 grid grid-cols-1 font-sans font-light text-md md:text-xl text-venice-offwhite">
+        <div className="ml-4place-self-center mt-2 grid grid-cols-1 font-sans font-light text-md md:text-xl text-venice-offwhite">
           <p className="text-center mt-6 font-medium">
             <span>The road to being </span>
             <span className="text-venice-green">the backend for finance.</span>
           </p>
-          <p className="mt-6">
+          <p className="mt-6 ml-4">
             <span className="font-bold text-venice-green">Today: </span>
             <span>Venice can provide you with unified financial data in minutes—accessible via SQL & direct database access.</span>
           </p>
-          <p className="mt-6">
+          <p className="mt-6 ml-4">
             <span className="font-bold text-venice-green">Phase 1: </span>
             <span>Venice will power more of everything you do with your financial data, starting with <span className="font-bold">Pipelines</span> to sync data to and from the tools you use most. </span>
           </p>
-          <p className="mt-6">
+          <p className="mt-6 ml-4">
             <span className="font-bold text-venice-green">Phase 2: </span>
             <span>Building on top of <span className="font-bold">VeniceDB</span> and <span className="font-bold">Pipelines</span>, we’ll work with our community to make building financial apps & user experiences effortless for all.</span>
           </p>
