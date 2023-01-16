@@ -30,10 +30,10 @@ function HeroSection() {
             <Image fill src="/assets/hero-underline.svg" alt="Underline" style={{ height: "100%", width: "100%" }} />
           </div>
         </h1>
-        <Image className="ml-20 mb-8" src="/assets/sql-search.svg" alt="SQL search built in" width={244} height={144} />
+        <Image className="ml-40 mb-8" src="/assets/sql-search.svg" alt="SQL search built in" width={244} height={144} />
       </div>
       <div>
-        <p className="montserrat-light-offwhite-17px text-venice-offwhite mt-10">
+        <p className="montserrat-light-17px text-venice-offwhite mt-10">
           Save weeks with the open-source data infrastructure trusted by data analysts, personal finance geeks, and developers to unify & access their finances in the most powerful & flexible ways.
         </p>
       </div>
@@ -49,8 +49,8 @@ function SyncInPipeOutSection() {
     <div className="mt-14 grid grid-cols-1">
       <Image src="/assets/sync-in-pipe-out.svg" alt="Sync banks to Venice's unified database" className="place-self-center" width={363} height={407} />
       <div className="mt-14 grid grid-cols-1">
-        <p className="mt-6 place-self-center montserrat-medium-green-17px">Venice is your unified financial database.</p>
-        <p className="max-w-lg place-self-center montserrat-light-offwhite-15px">
+        <p className="mt-6 place-self-center montserrat-medium-17px text-venice-green">Venice is your unified financial database.</p>
+        <p className="max-w-lg place-self-center montserrat-light-15px text-venice-offwhite">
           Continuously sync data from over 10,000 financial institutions & multiple data providers in minutes, saving yourself hours of manual input & expensive copy/paste mistakes.
         </p>
       </div>
