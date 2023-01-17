@@ -20,6 +20,8 @@ module.exports = {
       "venice-white": "var(--venice-white)",
       "venice-offwhite": "var(--venice-offwhite)",
       "venice-inner-bevel": "var(--venice-inner-bevel)",
+      "venice-input-background": "var(--venice-input-background)",
+      "venice-input-border": "var(--venice-input-border)",
       "github-gray": "var(--github-gray)",
     },
     container: {
@@ -35,7 +37,9 @@ module.exports = {
       ptMono: ['var(--ptMono-font)', 'Courier New', 'Courier', 'monospaces'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
 
 // Font Defaults

@@ -13,6 +13,8 @@
   --github-gray:rgba(238, 241, 245, 1);
   --venice-white:rgba(255, 255, 255, 1);
   --venice-green-glow:rgba(18,184,134,0.15);
+  --venice-input-background:rgba(41, 41, 41, 1);
+  --venice-input-border:rgba(0, 0, 0, 0.5);
 }
 
 @layer base {
