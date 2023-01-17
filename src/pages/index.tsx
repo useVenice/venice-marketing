@@ -3,7 +3,6 @@ import { GlowingButton } from "@/components/GlowingButton"
 import { Navigation } from "@/components/Navigation"
 import { Footer } from "@/components/Footer"
 import Image from "next/image"
-import { ReactFragment } from "react"
 
 export default function VeniceLandingPage() {
   return (
