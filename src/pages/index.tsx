@@ -33,7 +33,7 @@ function HeroSection() {
           <span className="text-venice-green">SQL </span><br />
           <span className="text-venice-offwhite">access to your </span><br />
           <span className="text-venice-green">financial data</span>
-          <div className="min-w-[240px] min-h-[23px] max-h-[23px] relative h-auto pr-4 mt-2">
+          <div className="min-w-[240px] min-h-[23px] max-h-[23px] relative h-auto pr-4 md:mt-2">
             <Image fill src="/assets/hero-underline.svg" alt="Underline" style={{ height: "100%", width: "100%" }} />
           </div>
         </div>
@@ -56,7 +56,7 @@ function HeroSection() {
 function SyncInPipeOutSection() {
   return (
     <div className="mt-14 grid grid-cols-1">
-      <Image src="/assets/sync-in-pipe-out.svg" alt="Sync banks to Venice's unified database" className="place-self-center" width={363} height={407} />
+      <Image src="/assets/sync-in-pipe-out.png" alt="Sync banks to Venice's unified database" className="place-self-center" width={363} height={407} />
       <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
         <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green">Venice is your unified financial database.</p>
         <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite">
@@ -94,7 +94,7 @@ function PersonaFragment(props: PersonaProps) {
   const { imagePath, name, text } = props;
   return (
     <div className="mx-4">
-      <Image className="mx-auto mt-6" src={imagePath} alt={name} width={75} height={75} />
+      <Image className="mx-auto mt-6" src={imagePath} alt={name} width={100} height={100} />
       <p className="text-center mt-2">
         <span className="font-sans font-bold text-sm md:text-base text-venice-offwhite">{name}</span>
         <span className="font-sans font-light text-sm md:text-base text-venice-offwhite">{text}</span>
@@ -199,7 +199,7 @@ function ValuePropCustomizeAndExtend() {
   )
 }
 
-/* Build tomorrow, today */
+/* Vision */
 
 function BuildTomorrowTodaySection() {
   return (
@@ -213,7 +213,7 @@ function BuildTomorrowTodaySection() {
           <span className="text-venice-green"> enable the frictionless movement of financial data </span>
           <span>through the power of the open source community.</span>
         </p>
-        <Image src="/assets/integrations-pipeline.svg" alt="Venice is building the future of financial pipelines" className="mt-10 mx-auto" width={371} height={343} />
+        <Image src="/assets/integrations-pipeline.png" alt="Venice is building the future of financial pipelines" className="mt-10 mx-auto" width={371} height={343} />
         <div className="ml-4place-self-center mt-2 grid grid-cols-1 font-sans font-light text-md md:text-xl text-venice-offwhite">
           <p className="text-center mt-6 font-medium">
             <span>The road to being </span>
@@ -237,6 +237,8 @@ function BuildTomorrowTodaySection() {
   )
 }
 
+/* Mission */
+
 function GreaterGoodSection() {
   return (
     <div className="mt-14 md:mt-20 grid grid-cols-1">
@@ -244,9 +246,9 @@ function GreaterGoodSection() {
         For the greater good
       </h1>
       <div className="flex mx-auto max-w-screen-sm">
-        <Image className="mt-2" src='/assets/handshake.svg' alt="Our mission" width={75} height={75} />
+        <Image className="mt-2 w-[75px] h-[75px]" src='/assets/handshake.png' alt="Our mission" width={75} height={75} />
         <div className="ml-4 mt-2">
-          <p className="font-sans font-light text-lg text-venice-offwhite mt-2">
+          <p className="font-sans font-light text-md md:text-xl text-venice-offwhite mt-2">
             Help us enable the frictionless movement of financial data & give back 1 billion years of happy, stable life to the working class.
           </p>
         </div>
