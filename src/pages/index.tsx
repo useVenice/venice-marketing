@@ -44,7 +44,7 @@ function HeroSection() {
         </p>
       </>
       <div className="grid grid-cols-1">
-        <GlowingButton className="place-self-center mt-10" link="/early-access/survey" text="GET EARLY ACCESS" />
+        <GlowingButton className="place-self-center mt-10" link="/early-access/apply" text="GET EARLY ACCESS" />
       </div>
     </div>
   )

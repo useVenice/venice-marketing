@@ -14,7 +14,7 @@ export function Footer() {
                         <Link href="https://github.com/useVenice/venice" target="_blank">
                             <Image src='/assets/icon-github.svg' alt='Star Venice on GitHub' width={20} height={20} />
                         </Link>
-                        <Link href="https://www.discord.com" target="_blank">
+                        <Link href="https://discord.gg/gTMch6Gn2u" target="_blank">
                             <Image src='/assets/icon-discord.svg' alt='Join our Discord' width={20} height={20} />
                         </Link>
                     </div>
