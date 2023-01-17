@@ -8,8 +8,8 @@ export function Footer() {
                 <div className="flex justify-between">
                     <Image src='/assets/venice-logo.svg' alt='Venice Logo' width={102} height={32} />
                     <div className="flex justify-between gap-10 mt-2">
-                        <Link href="mailto:hello@venice.is" target="_blank">
-                            <Image src='/assets/icon-send-email.svg' alt='Email us' width={20} height={20} />
+                        <Link className="mt-[2px]" href="mailto:hello@venice.is" target="_blank">
+                            <Image src='/assets/icon-send-email.svg' alt='Email us' width={20} height={15} />
                         </Link>
                         <Link href="https://github.com/useVenice/venice" target="_blank">
                             <Image src='/assets/icon-github.svg' alt='Star Venice on GitHub' width={20} height={20} />
