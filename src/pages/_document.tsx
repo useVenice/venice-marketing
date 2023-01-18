@@ -22,8 +22,8 @@ class VeniceDocument extends Document {
           <meta property="og:title" content="Venice — Financial data, fast." />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://venice.is" />
-          <meta property="og:image" content="http://www.venice.is/assets/og-image.png" />
-          <meta property="og:image:secure_url" content="https://www.venice.is/assets/og-image.png" />
+          <meta property="og:image" content="http://venice-finance.s3.us-west-1.amazonaws.com/og-image.png" />
+          <meta property="og:image:secure_url" content="https://venice-finance.s3.us-west-1.amazonaws.com/og-image.png" />
           <meta property="og:image:width" content="2400" />
           <meta property="og:image:height" content="1260" />
           <meta property="og:image:alt" content="Venice is the open-source data infrastructure trusted by data analysts, personal finance geeks, and developers to unify & access their finances in the most powerful & flexible ways." />
