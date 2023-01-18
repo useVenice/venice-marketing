@@ -3,10 +3,12 @@ import { Navigation } from "@/components/Navigation"
 import { Footer } from "@/components/Footer"
 import Image from "next/image"
 import Link from "next/link"
+import Head from "next/head"
 
 export default function ThanksForApplying() {
   return (
     <div className="min-h-[95vh]">
+      <Head><title>Venice - Thank you!</title></Head>
       <Navigation />
       <Container>
         <div className="mt-14 grid grid-cols-1">

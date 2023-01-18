@@ -3,10 +3,12 @@ import { GlowingButton } from "@/components/GlowingButton"
 import { Navigation } from "@/components/Navigation"
 import { Footer } from "@/components/Footer"
 import Image from "next/image"
+import Head from "next/head"
 
 export default function VeniceLandingPage() {
   return (
     <>
+      <Head><title>Venice - Financial data, fast.</title></Head>
       <Navigation />
       <Container>
         <HeroSection />

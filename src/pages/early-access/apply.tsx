@@ -1,8 +1,8 @@
 import { Container } from "@/components/Container"
 import { Navigation } from "@/components/Navigation"
 import { Footer } from "@/components/Footer"
-import Script from 'next/script'
 import { useEffect } from 'react'
+import Head from 'next/head'
 
 declare global {
   interface Window {
@@ -19,7 +19,7 @@ export default function ApplyForEarlyAccess() {
 
   return (
     <div className="min-h-[95vh]">
-      <Script src="https://tally.so/widgets/embed.js"></Script>
+      <Head><title>Venice - Apply for early access</title></Head>
       <Navigation />
       <Container>
         <div className="mt-20 min-w-[200px]">
