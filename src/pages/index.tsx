@@ -15,6 +15,7 @@ export default function VeniceLandingPage() {
         <SyncInPipeOutSection />
         <GiveYourselfSuperpowersSection />
         <ValuePropositionsSection />
+        <IngestNormalizeUnifySection />
         <BuildTomorrowTodaySection />
         <GreaterGoodSection />
       </Container>
@@ -59,8 +60,8 @@ function SyncInPipeOutSection() {
     <div className="mt-14 grid grid-cols-1">
       <Image src="/assets/sync-in-pipe-out.png" alt="Sync banks to Venice's unified database" className="place-self-center" width={363} height={407} />
       <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
-        <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green">Venice is your unified financial database.</p>
-        <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite">
+        <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green text-center">Venice is your unified financial database.</p>
+        <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite text-center">
           Continuously sync data from over 10,000 financial institutions & multiple data providers in minutes, saving yourself hours of manual input & expensive copy/paste mistakes.
         </p>
       </div>
@@ -197,6 +198,25 @@ function ValuePropCustomizeAndExtend() {
       valueImagePath="/assets/veniceToGithub.svg"
       valueImageAltText="Join Venice's open source community"
       valueText="Data source not supported? Teach Venice new things, or customize existing integrations." />
+  )
+}
+
+/* Ingest, Normalize, Unify */
+
+function IngestNormalizeUnifySection() {
+  return (
+    <div className="mt-14 md:mt-20 grid grid-cols-1">
+      <h1 className="font-sans text-center font-bold text-2xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
+        Unified data, piped anywhere
+      </h1>
+      <Image src="/assets/ingest-normalize-unify.svg" alt="Ingest, normalize, and unify your data" className="mt-10 place-self-center" width={600} height={228} />
+      <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
+        <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green text-center">Ship months ahead of schedule.</p>
+        <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite text-center">
+          Let us do the hard work of piping data in & normalizing it into a unified API. Don’t worry about creating schema connectors, or cron jobs, or hosting infrastructure, or security. Let us be the backend so you can build the future faster; your customers will thank you.
+        </p>
+      </div>
+    </div>
   )
 }
 
