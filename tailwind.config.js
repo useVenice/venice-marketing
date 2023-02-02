@@ -10,6 +10,7 @@ module.exports = {
     boxShadow: {
       "venice-green-glow": "0px 0px 8px 4px var(--venice-green-glow)",
       "venice-black-drop-shadow": "0px 2px 4px 0px rgba(0,0,0,0.15)",
+      "discord-blue-glow": "0px 0px 8px 4px var(--discord-blue-glow)",
     },
     colors: {
       "venice-green": "var(--venice-green)",
@@ -23,6 +24,7 @@ module.exports = {
       "venice-input-background": "var(--venice-input-background)",
       "venice-input-border": "var(--venice-input-border)",
       "github-gray": "var(--github-gray)",
+      "discord-blue": "var(--discord-blue)",
     },
     container: {
       center: true,
