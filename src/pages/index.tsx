@@ -12,10 +12,10 @@ export default function VeniceLandingPage() {
       <Navigation />
       <Container>
         <HeroSection />
+        <IngestNormalizeUnifySection />
         <SyncInPipeOutSection />
         <GiveYourselfSuperpowersSection />
         <ValuePropositionsSection />
-        <IngestNormalizeUnifySection />
         <BuildTomorrowTodaySection />
         <GreaterGoodSection />
       </Container>
@@ -31,23 +31,41 @@ function HeroSection() {
     <div className="mt-10 lg:mt-20">
       <div className="flex justify-between">
         <div className="font-montserrat font-bold text-3xl md:text-5xl lg:text-6xl leading-tight min-w-[234px]">
-          <span className="text-venice-offwhite">Instant </span>
-          <span className="text-venice-green">SQL </span><br />
-          <span className="text-venice-offwhite">access to your </span><br />
+          <span className="text-venice-green">Unified </span><br />
+          <span className="text-venice-offwhite">access to </span><br />
           <span className="text-venice-green">financial data</span>
           <div className="min-w-[240px] min-h-[23px] max-h-[23px] relative h-auto pr-4 md:mt-2">
             <Image fill src="/assets/hero-underline.svg" alt="Underline" style={{ height: "100%", width: "100%" }} />
           </div>
         </div>
-        <Image className="pl-6 md:pl-2 mr-4 mb-4" src="/assets/sql-search.svg" alt="SQL search built in" width={244} height={144} />
+        <Image className="pl-6 md:pl-2 mr-4 mb-4" src="/assets/unified-db-flow.svg" alt="Venice is the backend for finance" width={312} height={208} />
       </div>
       <>
         <p className="font-sans font-light text-lg md:text-2xl text-venice-offwhite mt-4 lg:mt-10">
           Save weeks with the open-source data infrastructure trusted by data analysts, personal finance geeks, and developers to unify & access their finances in the most powerful & flexible ways.
         </p>
       </>
-      <div className="grid grid-cols-1">
-        <GlowingButton className="place-self-center mt-10" link="/early-access/apply" text="GET EARLY ACCESS" />
+      <div className="grid grid-cols-1 mt-10">
+        <GlowingButton className="place-self-center" link="/early-access/apply" icon="/assets/icon-rocket.svg" text="GET EARLY ACCESS" />
+      </div>
+    </div>
+  )
+}
+
+/* Ingest, Normalize, Unify */
+
+function IngestNormalizeUnifySection() {
+  return (
+    <div className="mt-14 md:mt-20 grid grid-cols-1">
+      <h1 className="font-sans text-center font-bold text-2xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
+        Unified data, piped anywhere
+      </h1>
+      <Image src="/assets/ingest-normalize-unify.svg" alt="Ingest, normalize, and unify your data" className="mt-10 place-self-center" width={600} height={228} />
+      <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
+        <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green text-center">Ship months ahead of schedule.</p>
+        <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite text-center">
+          Let us do the hard work of piping data in & normalizing it into a unified API. Don’t worry about creating schema connectors, or cron jobs, or hosting infrastructure, or security. Let us be the backend so you can build the future faster; your customers will thank you.
+        </p>
       </div>
     </div>
   )
@@ -62,7 +80,7 @@ function SyncInPipeOutSection() {
       <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
         <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green text-center">Venice is your unified financial database.</p>
         <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite text-center">
-          Continuously sync data from over 10,000 financial institutions & multiple data providers in minutes, saving yourself hours of manual input & expensive copy/paste mistakes.
+          Continuously sync data from over 12,000 financial institutions & multiple data providers in minutes, saving yourself hours of manual input & expensive copy/paste mistakes.
         </p>
       </div>
     </div>
@@ -110,10 +128,11 @@ function PersonaFragment(props: PersonaProps) {
 function ValuePropositionsSection() {
   return (
     <div className="mt-6 lg:mt-14 mx-auto max-w-screen-sm">
-      <ValuePropDashboards />
-      <ValuePropGoogleSheetsOrCSV />
       <ValuePropHeadlessDatabase />
+      <ValuePropGoogleSheetsOrCSV />
+      <ValuePropDashboards />
       <ValuePropCustomizeAndExtend />
+      <ValuePropCallToActions />
     </div>
   )
 }
@@ -183,7 +202,7 @@ function ValuePropHeadlessDatabase() {
     }
       valueImagePath="/assets/veniceToApps.svg"
       valueImageAltText="Venice can be used as a headless database for your apps or scripts"
-      valueText="Build internal tools & scripts using Venice’s unified database to do the data aggregation work for you." />
+      valueText="Build internal tools & scripts and let Venice’s unified database do the data aggregation work for you." />
   )
 }
 function ValuePropCustomizeAndExtend() {
@@ -200,22 +219,11 @@ function ValuePropCustomizeAndExtend() {
       valueText="Data source not supported? Teach Venice new things, or customize existing integrations." />
   )
 }
-
-/* Ingest, Normalize, Unify */
-
-function IngestNormalizeUnifySection() {
+function ValuePropCallToActions() {
   return (
-    <div className="mt-14 md:mt-20 grid grid-cols-1">
-      <h1 className="font-sans text-center font-bold text-2xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
-        Unified data, piped anywhere
-      </h1>
-      <Image src="/assets/ingest-normalize-unify.svg" alt="Ingest, normalize, and unify your data" className="mt-10 place-self-center" width={600} height={228} />
-      <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
-        <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green text-center">Ship months ahead of schedule.</p>
-        <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite text-center">
-          Let us do the hard work of piping data in & normalizing it into a unified API. Don’t worry about creating schema connectors, or cron jobs, or hosting infrastructure, or security. Let us be the backend so you can build the future faster; your customers will thank you.
-        </p>
-      </div>
+    <div className="grid grid-cols-1 mt-14">
+      <GlowingButton className="place-self-center" link="/early-access/apply" icon="/assets/icon-rocket.svg" text="GET EARLY ACCESS" />
+      <GlowingButton color="bg-discord-blue" glowColor="shadow-discord-blue-glow" className="place-self-center mt-4" link="https://discord.gg/gTMch6Gn2u" icon="/assets/icon-discord.svg" text="JOIN OUR DISCORD" />
     </div>
   )
 }
@@ -224,7 +232,7 @@ function IngestNormalizeUnifySection() {
 
 function BuildTomorrowTodaySection() {
   return (
-    <div className="mt-14 md:mt-20 grid grid-cols-1">
+    <div className="mt-14 grid grid-cols-1">
       <h1 className="text-center font-sans font-bold text-3xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
         Build tomorrow, today
       </h1>
@@ -242,7 +250,7 @@ function BuildTomorrowTodaySection() {
           </p>
           <p className="mt-6 ml-4">
             <span className="font-bold text-venice-green">Today: </span>
-            <span>Venice can provide you with unified financial data in minutes—accessible via SQL & direct database access.</span>
+            <span>Venice can provide you with unified financial data in minutes—accessible via SQL or API (as JSON or CSV) and direct database access.</span>
           </p>
           <p className="mt-6 ml-4">
             <span className="font-bold text-venice-green">Phase 1: </span>
@@ -273,6 +281,9 @@ function GreaterGoodSection() {
             Help us enable the frictionless movement of financial data & give back 1 billion years of happy, stable life to the working class.
           </p>
         </div>
+      </div>
+      <div className="grid grid-cols-1 mt-6">
+        <GlowingButton color="bg-discord-blue" glowColor="shadow-discord-blue-glow" className="place-self-center mt-4" link="https://discord.gg/gTMch6Gn2u"  icon="/assets/icon-discord.svg" text="JOIN OUR DISCORD" />
       </div>
     </div>
   )
