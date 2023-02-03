@@ -1,6 +1,7 @@
 import { Container } from "@/components/Container"
 import { Navigation } from "@/components/Navigation"
 import { Footer } from "@/components/Footer"
+import { GlowingButton } from "@/components/GlowingButton"
 import Image from "next/image"
 import Link from "next/link"
 import Head from "next/head"
@@ -29,6 +30,9 @@ export default function ThanksForApplying() {
             <Link href="https://discord.gg/gTMch6Gn2u" target="_blank">
               <Image src='/assets/icon-discord.svg' alt='Join our Discord' width={50} height={50} />
             </Link>
+          </div>
+          <div className="grid grid-cols-1 mt-10">
+            <GlowingButton className="place-self-center" link="/" icon="/assets/icon-rocket.svg" text="LEARN MORE" />
           </div>
         </div>
       </Container>
