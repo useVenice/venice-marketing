@@ -30,15 +30,15 @@ function HeroSection() {
   return (
     <div className="mt-10 lg:mt-20">
       <div className="flex justify-between">
-        <div className="font-montserrat font-bold text-3xl md:text-5xl lg:text-6xl leading-tight min-w-[234px]">
+        <div className="font-montserrat font-bold text-3xl md:text-5xl lg:text-6xl leading-tight min-w-[220px]">
           <span className="text-venice-green">Unified </span><br />
           <span className="text-venice-offwhite">access to </span><br />
           <span className="text-venice-green">financial data</span>
-          <div className="min-w-[240px] min-h-[23px] max-h-[23px] relative h-auto pr-4 md:mt-2">
+          <div className="min-w-[220px] min-h-[23px] max-h-[23px] relative h-auto pr-2 md:mt-2">
             <Image fill src="/assets/hero-underline.svg" alt="Underline" style={{ height: "100%", width: "100%" }} />
           </div>
         </div>
-        <Image className="pl-6 md:pl-2 mr-4 mb-4" src="/assets/unified-db-flow.svg" alt="Venice is the backend for finance" width={312} height={208} />
+        <Image className="md:pl-2 mr-4 mb-4" src="/assets/unified-db-flow.svg" alt="Venice is the backend for finance" width={312} height={208} />
       </div>
       <>
         <p className="font-sans font-light text-lg md:text-2xl text-venice-offwhite mt-4 lg:mt-10">
