@@ -19,7 +19,7 @@ class VeniceDocument extends Document {
           <meta name="msapplication-TileColor" content="#12B886" />
           <meta name="theme-color" content="#12B886" />
           <meta name="description" content="Venice is your financial database. Continuously sync data from over 12,000 financial institutions & multiple data providers in minutes, saving yourself hours of manual input & expensive copy/paste mistakes." />
-          <meta property="og:title" content="Venice — Financial data, fast." />
+          <meta property="og:title" content="Venice — Frictionless financial data for developers." />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://venice.is" />
           <meta property="og:image" content="http://venice-finance.s3.us-west-1.amazonaws.com/og-image.png" />
