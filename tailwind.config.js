@@ -2,45 +2,41 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     boxShadow: {
-      "venice-green-glow": "0px 0px 8px 4px var(--venice-green-glow)",
-      "venice-black-drop-shadow": "0px 2px 4px 0px rgba(0,0,0,0.15)",
-      "discord-blue-glow": "0px 0px 8px 4px var(--discord-blue-glow)",
+      'venice-green-glow': '0px 0px 8px 4px var(--venice-green-glow)',
+      'venice-black-drop-shadow': '0px 2px 4px 0px rgba(0,0,0,0.15)',
+      'discord-blue-glow': '0px 0px 8px 4px var(--discord-blue-glow)',
     },
     colors: {
-      "venice-green": "var(--venice-green)",
-      "venice-red": "var(--venice-red)",
-      "venice-gray": "var(--venice-gray)",
-      "venice-footer-black": "var(--venice-footer-black)",
-      "venice-black": "var(--venice-black)",
-      "venice-white": "var(--venice-white)",
-      "venice-offwhite": "var(--venice-offwhite)",
-      "venice-inner-bevel": "var(--venice-inner-bevel)",
-      "venice-input-background": "var(--venice-input-background)",
-      "venice-input-border": "var(--venice-input-border)",
-      "github-gray": "var(--github-gray)",
-      "discord-blue": "var(--discord-blue)",
+      'venice-green': 'var(--venice-green)',
+      'venice-red': 'var(--venice-red)',
+      'venice-gray': 'var(--venice-gray)',
+      'venice-footer-black': 'var(--venice-footer-black)',
+      'venice-black': 'var(--venice-black)',
+      'venice-black-800': 'var(--venice-black-800)',
+      'venice-white': 'var(--venice-white)',
+      'venice-offwhite': 'var(--venice-offwhite)',
+      'venice-inner-bevel': 'var(--venice-inner-bevel)',
+      'venice-input-background': 'var(--venice-input-background)',
+      'venice-input-border': 'var(--venice-input-border)',
+      'github-gray': 'var(--github-gray)',
+      'discord-blue': 'var(--discord-blue)',
     },
     container: {
       center: true,
     },
     extend: {
       fontFamily: {
-        'sans': ['var(--inter-font)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--inter-font)', ...defaultTheme.fontFamily.sans],
       },
     },
     fontFamily: {
       inter: ['var(--inter-font)', ...defaultTheme.fontFamily.sans],
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [require('@tailwindcss/forms')],
 }
 
 // Font Defaults
