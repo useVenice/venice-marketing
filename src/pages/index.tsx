@@ -25,7 +25,7 @@ function HeroSection() {
   return (
     <div className="mt-10 lg:mt-20">
       <div className="flex justify-between">
-        <div className="font-montserrat font-bold text-3xl md:text-5xl lg:text-6xl leading-tight min-w-[220px]">
+        <div className="font-inter font-bold text-3xl md:text-5xl lg:text-6xl leading-tight min-w-[220px]">
           <span className="text-venice-green">Unified </span><br />
           <span className="text-venice-offwhite">access to </span><br />
           <span className="text-venice-green">financial data</span>

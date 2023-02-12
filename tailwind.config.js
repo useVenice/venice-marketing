@@ -31,12 +31,11 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'sans': ['var(--montserrat-font)', ...defaultTheme.fontFamily.sans],
+        'sans': ['var(--inter-font)', ...defaultTheme.fontFamily.sans],
       },
     },
     fontFamily: {
-      montserrat: ['var(--montserrat-font)', ...defaultTheme.fontFamily.sans],
-      ptMono: ['var(--ptMono-font)', 'Courier New', 'Courier', 'monospaces'],
+      inter: ['var(--inter-font)', ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [
