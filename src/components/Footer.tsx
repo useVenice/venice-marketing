@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container p-14 max-w-screen-md">
         <div className="flex justify-between">
           <Link href="/">
-            <Image src='/assets/venice-logo.svg' alt='Venice Logo' width={102} height={32} />
+            <Image src='/assets/venice-logo-offwhite.svg' alt='Venice Logo' width={102} height={32} />
           </Link>
           <div className="flex justify-between gap-10 mt-2">
             <Link className="mt-[2px]" href="mailto:hello@venice.is" target="_blank">
