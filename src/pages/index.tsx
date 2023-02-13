@@ -86,7 +86,7 @@ function HeroNavigation() {
 
 function HeroCallToActionButton() {
   return (
-    <div className="z-20 -mt-[9.4rem] w-full text-white gap-6 flex flex-col justify-center items-center self-stretch">
+    <div className="z-20 -mt-[9.4rem] md:-mt-16 w-full text-white gap-6 flex flex-col justify-center items-center self-stretch">
       <GetEarlyAccessButton />
     </div>
   )
