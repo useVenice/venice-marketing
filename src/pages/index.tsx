@@ -111,6 +111,7 @@ function LandingPageCards() {
       <CardUseCases />
       <CardReinventingTheWheel />
       <CardPoweredByOpenSource />
+      <CardHostedPlaid />
     </div>
   )
 }
@@ -255,6 +256,28 @@ function CardPoweredByOpenSource() {
       }
       imageName="card-open-source"
       imageAlt="Venice is powered by the open source community"
+    />
+  )
+}
+
+function CardHostedPlaid() {
+  return (
+    <LandingPageCard
+      title="hosted plaid integration"
+      largeText="The power of Plaid, without the hassle."
+      body={
+        <p>
+          Connect to more than 12,000 financial institutions across the US, Canada, and Europe—powered by Plaid.
+          <br />
+          <br />
+          Let us handle the infrastructure, streaming, schema transformations, API upgrades, webhook callbacks, and maintenance headaches.
+          <br />
+          <br />
+          Venice&apos;s unified API ensures you never need to learn more than one data schema, regardless of how many data sources you connect to.
+        </p>
+      }
+      imageName="card-plaid-as-a-service"
+      imageAlt="Get Plaid data in minutes, with zero setup"
     />
   )
 }
