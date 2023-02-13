@@ -1,0 +1,19 @@
+# dependencies
+**/node_modules/
+
+# temporary files
+**/temp/
+
+# generated files
+**/__generated__/
+*.generated.*
+*.gen.*
+
+# jest
+*.snap
+
+# next.js
+.next/
+
+# yarn
+yarn.lock

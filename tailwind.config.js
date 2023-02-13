@@ -1,47 +1,74 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+const VeniceTheme = {
+  background: '#1e1e1e',
+  black: {
+    DEFAULT: '#1e1e1e',
+    300: '#4e4e4e',
+    400: '#3e3e3e',
+    500: '#2e2e2e',
+    800: '#151515',
+  },
+  discordPurpleLight: '#6E79EF',
+  discordPurpleDark: '#5966EC',
+  dropShadow: '#00000026',
+  footerBlack: '#191919',
+  githubGray: '#eef1f5',
+  gold: '#ecac4c',
+  gray: '#7d7d7d',
+  grayText: '#c0c0c0',
+  _green: '#12b886',
+  green: {
+    DEFAULT: '#12b886',
+    darkened: '#099f72',
+  },
+  greenGlow: '#12b88626',
+  innerBevel: '#0000001a',
+  inputBackground: '#292929',
+  inputBorder: '#00000080',
+  offwhite: '#eaeaea',
+  primary: '#eaeaea',
+  red: '#DB3E5A',
+  secondary: '#12b886',
+  white: '#ffffff',
+  yellow: '#D0DF00',
+}
+
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
+    // No styles in here, be very careful about including extra
+    // paths here we don't need otherwise it causes massive DX perf issues
+    // where it takes 60 seconds to compile a one line hello world change
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     boxShadow: {
-      "venice-green-glow": "0px 0px 8px 4px var(--venice-green-glow)",
-      "venice-black-drop-shadow": "0px 2px 4px 0px rgba(0,0,0,0.15)",
-      "discord-blue-glow": "0px 0px 8px 4px var(--discord-blue-glow)",
-    },
-    colors: {
-      "venice-green": "var(--venice-green)",
-      "venice-red": "var(--venice-red)",
-      "venice-gray": "var(--venice-gray)",
-      "venice-footer-black": "var(--venice-footer-black)",
-      "venice-black": "var(--venice-black)",
-      "venice-white": "var(--venice-white)",
-      "venice-offwhite": "var(--venice-offwhite)",
-      "venice-inner-bevel": "var(--venice-inner-bevel)",
-      "venice-input-background": "var(--venice-input-background)",
-      "venice-input-border": "var(--venice-input-border)",
-      "github-gray": "var(--github-gray)",
-      "discord-blue": "var(--discord-blue)",
+      'venice-green-glow': '0px 0px 8px 4px rgba(19, 183, 134, 0.15)',
+      'venice-black-drop-shadow': '0px 2px 4px 0px rgba(0,0,0,0.15)',
+      'discord-purple-glow': '0px 0px 8px 4px rgba(105, 117, 239, 0.15)',
     },
     container: {
       center: true,
     },
     extend: {
+      colors: {
+        ...VeniceTheme,
+        'venice-black': VeniceTheme.black,
+        'venice-green': VeniceTheme.green,
+        'venice-red': VeniceTheme.red,
+      },
+      current: 'currentColor',
       fontFamily: {
-        'sans': ['var(--montserrat-font)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--inter-font)', ...defaultTheme.fontFamily.sans],
+      },
+      textColor: {
+        'venice-gray': VeniceTheme.grayText,
       },
     },
-    fontFamily: {
-      montserrat: ['var(--montserrat-font)', ...defaultTheme.fontFamily.sans],
-      ptMono: ['var(--ptMono-font)', 'Courier New', 'Courier', 'monospaces'],
-    },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [require('@tailwindcss/forms')],
 }
 
 // Font Defaults
