@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import {Inter} from '@next/font/google'
 import type {AppProps} from 'next/app'
+import Head from 'next/head'
 import posthog from 'posthog-js'
 import {useEffect} from 'react'
 
@@ -24,6 +25,9 @@ export default function App({Component, pageProps}: AppProps) {
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      </Head>
       <main className={`${inter.variable}`}>
         <Component {...pageProps} />
       </main>
