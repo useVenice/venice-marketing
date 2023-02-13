@@ -109,6 +109,7 @@ function LandingPageCards() {
     <div className="mt-20 w-full h-full min-h-full flex flex-col flex-wrap gap-40">
       <CardLaunchFaster />
       <CardUseCases />
+      <CardReinventingTheWheel />
     </div>
   )
 }
@@ -203,5 +204,24 @@ function GreenBulletPoint(props: GreenBulletPointProps) {
         <p className="inline"> {props.whiteText}</p>
       </div>
     </div>
+  )
+}
+
+function CardReinventingTheWheel() {
+  return (
+    <LandingPageCard
+      title="backend as a service"
+      largeText="Stop reinventing the wheel."
+      body={
+        <p>
+          Every fintech company <span className="text-red">unintentionally</span> builds a data engineering company.
+          <br />
+          <br />
+          Spend your time creating value for your business and your customers instead of adding months of extra work & risk onto your roadmap.
+        </p>
+      }
+      imageName="card-launch-rocket"
+      imageAlt="Let us do the heavy lifting, so you can focus on launching"
+    />
   )
 }
