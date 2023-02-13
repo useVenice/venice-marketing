@@ -10,6 +10,8 @@ const VeniceTheme = {
     500: '#2e2e2e',
     800: '#151515',
   },
+  discordPurpleLight: '#6E79EF',
+  discordPurpleDark: '#5966EC',
   dropShadow: '#00000026',
   footerBlack: '#191919',
   githubGray: '#eef1f5',
@@ -43,9 +45,9 @@ module.exports = {
   ],
   theme: {
     boxShadow: {
-      'venice-green-glow': '0px 0px 8px 4px var(--venice-green-glow)',
+      'venice-green-glow': '0px 0px 8px 4px rgba(19, 183, 134, 0.15)',
       'venice-black-drop-shadow': '0px 2px 4px 0px rgba(0,0,0,0.15)',
-      'discord-blue-glow': '0px 0px 8px 4px var(--discord-blue-glow)',
+      'discord-purple-glow': '0px 0px 8px 4px rgba(105, 117, 239, 0.15)',
     },
     container: {
       center: true,

@@ -94,7 +94,7 @@ function HeroCallToActionButton() {
 
 function GetEarlyAccessButton() {
   return (
-    <div className="bg-gradient-to-r p-[1px] from-green to-yellow rounded-lg shadow-lg shadow-green">
+    <div className="bg-gradient-to-r p-[1px] from-green to-yellow rounded-lg shadow-lg shadow-venice-green-glow">
       <GlowingButton
         className="z-20 place-self-center"
         color="bg-black"
@@ -119,6 +119,7 @@ function LandingPageCards() {
       <CardPoweredByOpenSource />
       <CardHostedPlaid />
       <CardTimeIsMoney />
+      <CardJoinOurCommunity />
     </div>
   )
 }
@@ -316,5 +317,39 @@ function CardTimeIsMoney() {
         </div>
       }
     />
+  )
+}
+
+function CardJoinOurCommunity() {
+  return (
+    <LandingPageCard
+      title="a community of founders & builders"
+      largeText="Go farther together & build tomorrow, today."
+      body={
+        <div className="w-full gap-6 flex flex-col justify-center items-center self-stretch">
+          <p>
+            Venice is building a movement, powered by fintech founders & builders who believe anyone can build the future—and that we can go faster and farther
+            when we work together as a community.
+          </p>
+          <JoinOurDiscordButton />
+        </div>
+      }
+    />
+  )
+}
+
+function JoinOurDiscordButton() {
+  return (
+    <div className="bg-gradient-to-r p-[1px] from-discordPurpleLight to-discordPurpleDark rounded-lg shadow-lg shadow-discord-purple-glow">
+      <GlowingButton
+        className="z-20 place-self-center"
+        color="bg-black"
+        borderColor="border-transparent"
+        glowColor=""
+        link="https://discord.gg/gTMch6Gn2u"
+        icon="/assets/icon-discord.svg"
+        text="JOIN OUR DISCORD"
+      />
+    </div>
   )
 }
