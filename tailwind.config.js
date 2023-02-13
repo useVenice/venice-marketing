@@ -15,6 +15,7 @@ const VeniceTheme = {
   githubGray: '#eef1f5',
   gold: '#ecac4c',
   gray: '#7d7d7d',
+  grayText: '#c0c0c0',
   _green: '#12b886',
   green: {
     DEFAULT: '#12b886',
@@ -61,7 +62,7 @@ module.exports = {
         sans: ['var(--inter-font)', ...defaultTheme.fontFamily.sans],
       },
       textColor: {
-        'venice-gray': '#c0c0c0',
+        'venice-gray': VeniceTheme.grayText,
       },
     },
   },
