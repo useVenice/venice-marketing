@@ -1,26 +1,25 @@
-import { Container } from "@/components/Container"
-import { GlowingButton } from "@/components/GlowingButton"
-import { Navigation } from "@/components/Navigation"
-import { Footer } from "@/components/Footer"
-import Image from "next/image"
-import Head from "next/head"
+import BulletPoint from '@/components/assets/BulletPoint'
+import GitHubLogoBlack from '@/components/assets/GitHubLogoBlack'
+import VeniceLogoBlack from '@/components/assets/VeniceLogoBlack'
+import {Container} from '@/components/Container'
+import {Footer} from '@/components/Footer'
+import {GlowingButton} from '@/components/GlowingButton'
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function VeniceLandingPage() {
   return (
-    <>
-      <Head><title>Venice - Financial data, fast.</title></Head>
-      <Navigation />
-      <Container>
-        <HeroSection />
-        <IngestNormalizeUnifySection />
-        <SyncInPipeOutSection />
-        <GiveYourselfSuperpowersSection />
-        <ValuePropositionsSection />
-        <BuildTomorrowTodaySection />
-        <GreaterGoodSection />
-      </Container>
+    <div className="font-sans gap-8 inline-flex flex-col items-center bg-black-800 overflow-clip w-screen">
+      <Head>
+        <title>Venice - Financial data, for developers.</title>
+      </Head>
+      <HeroSection />
+      <div className="px-4 max-w-screen-xl min-w-[320px]">
+        <LandingPageCards />
+      </div>
       <Footer />
-    </>
+    </div>
   )
 }
 
@@ -28,263 +27,329 @@ export default function VeniceLandingPage() {
 
 function HeroSection() {
   return (
-    <div className="mt-10 lg:mt-20">
-      <div className="flex justify-between">
-        <div className="font-montserrat font-bold text-3xl md:text-5xl lg:text-6xl leading-tight min-w-[220px]">
-          <span className="text-venice-green">Unified </span><br />
-          <span className="text-venice-offwhite">access to </span><br />
-          <span className="text-venice-green">financial data</span>
-          <div className="min-w-[220px] min-h-[23px] max-h-[23px] relative h-auto pr-2 md:mt-2">
-            <Image fill src="/assets/hero-underline.svg" alt="Underline" style={{ height: "100%", width: "100%" }} />
+    <>
+      <div className="z-0 h-[487px] min-h-[487px] min-w-[320px] w-screen flex justify-center items-center">
+        <div
+          className="w-screen h-full text-left bg-gradient-to-r from-green to-yellow object-cover"
+          style={{
+            maskImage: 'url(/assets/hero-mask.png)',
+            maskSize: '100% 100%',
+            maskRepeat: 'no-repeat',
+            WebkitMaskImage: 'url(/assets/hero-mask.png)',
+            WebkitMaskSize: '100% 100%',
+            WebkitMaskRepeat: 'no-repeat',
+          }}>
+          <div className="bg-repeat-x bg-bottom w-full h-full" style={{backgroundImage: 'url("/assets/hero-dots.svg")'}}>
+            <HeroNavAndText />
           </div>
         </div>
-        <Image className="md:pl-2 mr-4 mb-4" src="/assets/unified-db-flow.svg" alt="Venice is the backend for finance" width={312} height={208} />
       </div>
-      <>
-        <p className="font-sans font-light text-lg md:text-2xl text-venice-offwhite mt-4 lg:mt-10">
-          Save weeks with the open-source data infrastructure trusted by data analysts, personal finance geeks, and developers to unify & access their finances in the most powerful & flexible ways.
-        </p>
-      </>
-      <div className="grid grid-cols-1 mt-10">
-        <GlowingButton className="place-self-center" link="/early-access/apply" icon="/assets/icon-rocket.svg" text="GET EARLY ACCESS" />
-      </div>
-    </div>
+      <HeroCallToActionButton />
+    </>
   )
 }
 
-/* Ingest, Normalize, Unify */
-
-function IngestNormalizeUnifySection() {
+function HeroNavAndText() {
   return (
-    <div className="mt-14 md:mt-20 grid grid-cols-1">
-      <h1 className="font-sans text-center font-bold text-2xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
-        Unified data, piped anywhere
-      </h1>
-      <Image src="/assets/ingest-normalize-unify.svg" alt="Ingest, normalize, and unify your data" className="mt-10 place-self-center" width={600} height={228} />
-      <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
-        <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green text-center">Ship months ahead of schedule.</p>
-        <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite text-center">
-          Let us do the hard work of piping data in & normalizing it into a unified API. Don’t worry about creating schema connectors, or cron jobs, or hosting infrastructure, or security. Let us be the backend so you can build the future faster; your customers will thank you.
-        </p>
-      </div>
-    </div>
-  )
-}
-
-/* Sync in, pipe out */
-
-function SyncInPipeOutSection() {
-  return (
-    <div className="mt-14 grid grid-cols-1">
-      <Image src="/assets/sync-in-pipe-out.png" alt="Sync banks to Venice's unified database" className="place-self-center" width={363} height={407} />
-      <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
-        <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green text-center">Venice is your unified financial database.</p>
-        <p className="font-sans font-light text-sm md:text-lg text-venice-offwhite text-center">
-          Continuously sync data from over 12,000 financial institutions & multiple data providers in minutes, saving yourself hours of manual input & expensive copy/paste mistakes.
-        </p>
-      </div>
-    </div>
-  )
-}
-
-/* Superpowers */
-
-function GiveYourselfSuperpowersSection() {
-  return (
-    <div className="mt-14 md:mt-20 grid grid-cols-1">
-      <h1 className="font-sans text-center font-bold text-2xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
-        Give yourself superpowers
-      </h1>
-      <div className="grid grid-cols-2 md:mx-20 mt-2 lg:mt-6">
-        <PersonaFragment imagePath="/assets/persona-developer.svg" name="Developers" text=" use Venice as a unified financial database for their teams & products" />
-        <PersonaFragment imagePath="/assets/persona-analysts.svg" name="Data analysts" text=" use Venice to consolidate revenue & reporting into a unified database" />
-        <PersonaFragment imagePath="/assets/persona-geeks.svg" name="Personal finance geeks" text=" use Venice to keep their spreadsheets up-to-date & build wealth faster" />
-        <PersonaFragment imagePath="/assets/persona-finance-teams.svg" name="Finance teams" text=" use Venice to remove hours of manual data updates & avoid costly mistakes" />
-      </div>
-    </div>
-  )
-}
-
-type PersonaProps = {
-  imagePath: string;
-  name: string;
-  text: string;
-}
-function PersonaFragment(props: PersonaProps) {
-  const { imagePath, name, text } = props;
-  return (
-    <div className="mx-4">
-      <Image className="mx-auto mt-6" src={imagePath} alt={name} width={100} height={100} />
-      <p className="text-center mt-2">
-        <span className="font-sans font-bold text-sm md:text-base text-venice-offwhite">{name}</span>
-        <span className="font-sans font-light text-sm md:text-base text-venice-offwhite">{text}</span>
-      </p>
-    </div>
-  )
-}
-
-/* Value propositions */
-
-function ValuePropositionsSection() {
-  return (
-    <div className="mt-6 lg:mt-14 mx-auto max-w-screen-sm">
-      <ValuePropHeadlessDatabase />
-      <ValuePropGoogleSheetsOrCSV />
-      <ValuePropDashboards />
-      <ValuePropCustomizeAndExtend />
-      <ValuePropCallToActions />
-    </div>
-  )
-}
-type ValuePropositionProps = {
-  headerFragment: any;
-  valueImagePath: string;
-  valueImageAltText: string;
-  valueText: string;
-  valueCode?: string;
-}
-function ValueProposition(props: ValuePropositionProps) {
-  const { headerFragment, valueImagePath, valueImageAltText, valueText, valueCode } = props;
-  return (
-    <div className="mt-4 lg:mt-10">
-      <div className="font-sans font-medium text-md md:text-xl text-venice-offwhite">
-        {headerFragment}
-      </div>
-      <div className="flex">
-        <Image src={valueImagePath} alt={valueImageAltText} width={106} height={36} />
-        <div className="ml-4">
-          <p className="font-sans font-light text-venice-offwhite mt-2">{valueText}</p>
-          <p className="font-ptMono text-sm text-venice-gray mt-2">{valueCode}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-function ValuePropDashboards() {
-  return (
-    <ValueProposition headerFragment={
-      <>
-        <span>Connect to </span>
-        <span className="text-venice-green">Dashboards</span>
-        <span> & </span>
-        <span className="text-venice-green">Charting</span>
-        <span> tools</span>
-      </>
-    }
-      valueImagePath="/assets/veniceToDashboards.svg"
-      valueImageAltText="Connect Venice to your favorite dashboard or charting tool"
-      valueText="Build custom queries and connect to your favorite dashboard tools to visualize your financial data in new and powerful ways." />
-  )
-}
-function ValuePropGoogleSheetsOrCSV() {
-  return (
-    <ValueProposition headerFragment={
-      <p>
-        <span>Access from  </span>
-        <span className="text-venice-green">Google Sheets</span>
-        <span> or via </span>
-        <span className="text-venice-green">CSV</span>
-      </p>
-    }
-      valueImagePath="/assets/veniceToCSV.svg"
-      valueImageAltText="Access Venice's unified data from Google Sheets or via CSV"
-      valueText="Export your data automatically or via CSV."
-      valueCode="=IMPORTDATA(“venice.is/csv?query=select date, amount from transaction”)" />
-  )
-}
-function ValuePropHeadlessDatabase() {
-  return (
-    <ValueProposition headerFragment={
-      <p>
-        <span className="text-venice-green">Headless database</span>
-        <span> for apps & scripts</span>
-      </p>
-    }
-      valueImagePath="/assets/veniceToApps.svg"
-      valueImageAltText="Venice can be used as a headless database for your apps or scripts"
-      valueText="Build internal tools & scripts and let Venice’s unified database do the data aggregation work for you." />
-  )
-}
-function ValuePropCustomizeAndExtend() {
-  return (
-    <ValueProposition headerFragment={
-      <p>
-        <span className="text-venice-green">Customize</span>
-        <span> and </span>
-        <span className="text-venice-green">extend</span>
-      </p>
-    }
-      valueImagePath="/assets/veniceToGithub.svg"
-      valueImageAltText="Join Venice's open source community"
-      valueText="Data source not supported? Teach Venice new things, or customize existing integrations." />
-  )
-}
-function ValuePropCallToActions() {
-  return (
-    <div className="grid grid-cols-1 mt-14">
-      <GlowingButton className="place-self-center" link="/early-access/apply" icon="/assets/icon-rocket.svg" text="GET EARLY ACCESS" />
-      <GlowingButton color="bg-discord-blue" glowColor="shadow-discord-blue-glow" className="place-self-center mt-4" link="https://discord.gg/gTMch6Gn2u" icon="/assets/icon-discord.svg" text="JOIN OUR DISCORD" />
-    </div>
-  )
-}
-
-/* Vision */
-
-function BuildTomorrowTodaySection() {
-  return (
-    <div className="mt-14 grid grid-cols-1">
-      <h1 className="text-center font-sans font-bold text-3xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
-        Build tomorrow, today
-      </h1>
-      <div className="mx-auto max-w-screen-sm place-self-center">
-        <p className="mt-6 text-center font-sans font-medium text-lg md:text-2xl text-venice-offwhite">
-          <span>Our vision is to</span>
-          <span className="text-venice-green"> enable the frictionless movement of financial data </span>
-          <span>through the power of the open source community.</span>
-        </p>
-        <Image src="/assets/integrations-pipeline.png" alt="Venice is building the future of financial pipelines" className="mt-10 mx-auto" width={371} height={343} />
-        <div className="ml-4place-self-center mt-2 grid grid-cols-1 font-sans font-light text-md md:text-xl text-venice-offwhite">
-          <p className="text-center mt-6 font-medium">
-            <span>The road to being </span>
-            <span className="text-venice-green">the backend for finance.</span>
-          </p>
-          <p className="mt-6 ml-4">
-            <span className="font-bold text-venice-green">Today: </span>
-            <span>Venice can provide you with unified financial data in minutes—accessible via SQL or API (as JSON or CSV) and direct database access.</span>
-          </p>
-          <p className="mt-6 ml-4">
-            <span className="font-bold text-venice-green">Phase 1: </span>
-            <span>Venice will power more of everything you do with your financial data, starting with <span className="font-bold">Pipelines</span> to sync data to and from the tools you use most. </span>
-          </p>
-          <p className="mt-6 ml-4">
-            <span className="font-bold text-venice-green">Phase 2: </span>
-            <span>Building on top of <span className="font-bold">VeniceDB</span> and <span className="font-bold">Pipelines</span>, we’ll work with our community to make building financial apps & user experiences effortless for all.</span>
+    <Container>
+      <div className="mt-12 gap-8 flex flex-col justify-center items-start">
+        <HeroNavigation />
+        <div className="gap-6 flex flex-col items-start md:mx-20">
+          <div className="font-extrabold">
+            <div className="text-4xl md:text-5xl text-black">
+              <p className="inline leading-none">Frictionless</p>
+              <br />
+              <p className="inline text-offwhite bg-black rounded-lg py-0 px-2 leading-snug">financial data</p>
+              <br />
+              <p className="inline leading-none">for developers</p>
+            </div>
+          </div>
+          <p className="text-base font-semibold leading-6 text-black-500">
+            Build in a weekend, and let us do the heavy lifting. Your customers will thank you.
           </p>
         </div>
       </div>
+    </Container>
+  )
+}
+
+function HeroNavigation() {
+  return (
+    <div className="w-full flex items-center justify-between">
+      <VeniceLogoBlack />
+      <Link href="https://github.com/useVenice/venice" target="_blank">
+        <GitHubLogoBlack />
+      </Link>
     </div>
   )
 }
 
-/* Mission */
-
-function GreaterGoodSection() {
+function HeroCallToActionButton() {
   return (
-    <div className="mt-14 md:mt-20 grid grid-cols-1">
-      <h1 className="text-center font-sans font-bold text-3xl md:text-5xl text-venice-offwhite leading-tight min-w-[234px]">
-        For the greater good
-      </h1>
-      <div className="flex mx-auto max-w-screen-sm">
-        <Image className="mt-2 w-[75px] h-[75px]" src='/assets/handshake.png' alt="Our mission" width={75} height={75} />
-        <div className="ml-4 mt-2">
-          <p className="font-sans font-light text-md md:text-xl text-venice-offwhite mt-2">
-            Help us enable the frictionless movement of financial data & give back 1 billion years of happy, stable life to the working class.
-          </p>
+    <div className="z-20 -mt-[9.4rem] md:-mt-16 w-full text-white gap-6 flex flex-col justify-center items-center self-stretch">
+      <GetEarlyAccessButton />
+    </div>
+  )
+}
+
+function GetEarlyAccessButton() {
+  return (
+    <div className="bg-gradient-to-r p-[1px] from-green to-yellow rounded-lg shadow-lg shadow-venice-green-glow">
+      <GlowingButton
+        className="z-20 place-self-center"
+        color="bg-black"
+        borderColor="border-transparent"
+        glowColor=""
+        link="/early-access/apply"
+        icon="/assets/icon-rocket.svg"
+        text="GET EARLY ACCESS"
+      />
+    </div>
+  )
+}
+
+/* Landing Page Card */
+
+function LandingPageCards() {
+  return (
+    <div className="mt-20 w-full h-full min-h-full flex flex-col flex-wrap gap-40">
+      <CardLaunchFaster />
+      <CardUseCases />
+      <CardReinventingTheWheel />
+      <CardPoweredByOpenSource />
+      <CardHostedPlaid />
+      <CardTimeIsMoney />
+      <CardJoinOurCommunity />
+    </div>
+  )
+}
+
+type LandingPageCardProps = {
+  title: string
+  largeText: string
+  body: React.ReactNode
+  imageName?: string
+  imageAlt?: string
+}
+function LandingPageCard(props: LandingPageCardProps) {
+  if (props.imageName && props.imageAlt) {
+    return (
+      <div className="flex flex-col">
+        <div className="gap-4 md:mx-10 flex flex-col items-start self-stretch md:flex-row md:flex-no-wrap">
+          <div className="w-full md:w-1/2 md:ml-20 gap-2 md:gap-4 flex flex-col items-start justify-center self-stretch text-left">
+            <p className="bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent text-xs md:text-sm font-extrabold tracking-widest uppercase leading-normal">
+              {props.title}
+            </p>
+            <p className="font-extrabold text-3xl md:text-5xl text-offwhite">{props.largeText}</p>
+            <div className="font-normal leading-5 m-0 text-sm md:text-base text-grayText">{props.body}</div>
+          </div>
+          <div className="w-full items-center md:w-1/2 mt-4 md:mt-0 flex flex-col">
+            <Image src={`/assets/${props.imageName}.png`} alt={props.imageAlt} width={397} height={387} />
+          </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 mt-6">
-        <GlowingButton color="bg-discord-blue" glowColor="shadow-discord-blue-glow" className="place-self-center mt-4" link="https://discord.gg/gTMch6Gn2u"  icon="/assets/icon-discord.svg" text="JOIN OUR DISCORD" />
+    )
+  } else {
+    return (
+      <div className="max-w-screen-md mx-auto flex flex-col">
+        <div className="gap-4 md:mx-10 flex flex-col items-start self-stretch md:flex-row md:flex-no-wrap">
+          <div className="w-full md:ml-20 gap-2 md:gap-4 flex flex-col items-start justify-center self-stretch text-left">
+            <p className="bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent text-xs md:text-sm font-extrabold tracking-widest uppercase leading-normal">
+              {props.title}
+            </p>
+            <p className="font-extrabold text-3xl md:text-5xl text-offwhite">{props.largeText}</p>
+            <div className="mt-2 w-full font-normal leading-5 m-0 text-sm md:text-base text-grayText">{props.body}</div>
+          </div>
+        </div>
       </div>
+    )
+  }
+}
+
+function CardLaunchFaster() {
+  return (
+    <LandingPageCard
+      title="unified data & api"
+      largeText="Launch faster."
+      body={
+        <p>
+          Let us do the hard work of piping data in & normalizing it into a unified API. Don&apos;t worry about transforming schemas, or scheduling cron jobs,
+          or infrastructure, or security.
+          <br />
+          <br />
+          Let us be the backend so you can build the future faster.
+        </p>
+      }
+      imageName="card-elt-pipelines"
+      imageAlt="Venice ingests, normalizes, and unifies data into a single API"
+    />
+  )
+}
+
+function CardUseCases() {
+  return (
+    <LandingPageCard
+      title="12,000+ data sources"
+      largeText="A billion possibilities."
+      body={
+        <>
+          <p>
+            How will <span className="italic">you</span> change the world using Venice?
+          </p>
+          <br />
+          <div className="flex flex-col gap-2">
+            <GreenBulletPoint greenText="Developers" whiteText="use Venice as a unified financial database for their teams & products" />
+            <GreenBulletPoint
+              greenText="Companies"
+              whiteText="use Venice to make data-driven decisions about their small-business customers & underwrite risk"
+            />
+            <GreenBulletPoint greenText="Data analysts" whiteText="use Venice to consolidate revenue & reporting into a single source of truth" />
+            <GreenBulletPoint greenText="Personal finance geeks" whiteText="use Venice to keep their spreadsheets up-to-date & build wealth faster" />
+            <GreenBulletPoint greenText="Finance teams" whiteText="use Venice to remove hours of manual data updates & avoid costly mistakes" />
+          </div>
+        </>
+      }
+      imageName="card-use-cases"
+      imageAlt="Venice gives you superpowers"
+    />
+  )
+}
+
+type GreenBulletPointProps = {
+  greenText: string
+  whiteText: string
+}
+function GreenBulletPoint(props: GreenBulletPointProps) {
+  return (
+    <div className="flex gap-2">
+      <BulletPoint />
+      <div className="w-full">
+        <p className="inline bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent w-full text-base font-bold leading-normal">
+          {props.greenText}
+        </p>
+        <p className="inline"> {props.whiteText}</p>
+      </div>
+    </div>
+  )
+}
+
+function CardReinventingTheWheel() {
+  return (
+    <LandingPageCard
+      title="backend as a service"
+      largeText="Stop reinventing the wheel."
+      body={
+        <p>
+          Every fintech company <span className="text-red">unintentionally</span> builds a data engineering company.
+          <br />
+          <br />
+          Spend your time creating value for your business and your customers instead of adding months of extra work & risk onto your roadmap.
+        </p>
+      }
+      imageName="card-launch-rocket"
+      imageAlt="Let us do the heavy lifting, so you can focus on launching"
+    />
+  )
+}
+
+function CardPoweredByOpenSource() {
+  return (
+    <LandingPageCard
+      title="bring your own data source"
+      largeText="Powered by open source infrastructure."
+      body={
+        <>
+          <p>
+            Our community of open source developers believes in a world where financial data moves effortlessly from A to B, with the least amount of code
+            required.
+          </p>
+          <br />
+          <div className="flex flex-col gap-2">
+            <GreenBulletPoint greenText="Customize" whiteText="existing integrations, standing on the shoulders of giants who helped pave the way" />
+            <GreenBulletPoint
+              greenText="Extend"
+              whiteText="Venice by easily building new data pipelines that the whole community benefits from, seamlessly integrated into Venice's infrastructure"
+            />
+            <GreenBulletPoint greenText="Control" whiteText="how often Venice syncs data to save on cost or complexity" />
+            <GreenBulletPoint
+              greenText="Protect"
+              whiteText="your customer data by self-hosting Venice on-premise if needed and choosing where data is streamed into"
+            />
+          </div>
+        </>
+      }
+      imageName="card-open-source"
+      imageAlt="Venice is powered by the open source community"
+    />
+  )
+}
+
+function CardHostedPlaid() {
+  return (
+    <LandingPageCard
+      title="hosted plaid integration"
+      largeText="The power of Plaid, without the hassle."
+      body={
+        <p>
+          Connect to more than 12,000 financial institutions across the US, Canada, and Europe—powered by Plaid.
+          <br />
+          <br />
+          Let us handle the infrastructure, streaming, schema transformations, API upgrades, webhook callbacks, and maintenance headaches.
+          <br />
+          <br />
+          Venice&apos;s unified API ensures you never need to learn more than one data schema, regardless of how many data sources you connect to.
+        </p>
+      }
+      imageName="card-plaid-as-a-service"
+      imageAlt="Get Plaid data in minutes, with zero setup"
+    />
+  )
+}
+
+function CardTimeIsMoney() {
+  return (
+    <LandingPageCard
+      title="time is money"
+      largeText="Let's save you plenty of both."
+      body={
+        <div className="w-full gap-6 flex flex-col justify-center items-center self-stretch">
+          <GetEarlyAccessButton />
+        </div>
+      }
+    />
+  )
+}
+
+function CardJoinOurCommunity() {
+  return (
+    <LandingPageCard
+      title="a community of founders & builders"
+      largeText="Go farther together & build tomorrow, today."
+      body={
+        <div className="w-full gap-6 flex flex-col justify-center items-center self-stretch">
+          <p>
+            Venice is building a movement, powered by fintech founders & builders who believe anyone can build the future—and that we can go faster and farther
+            when we work together as a community.
+          </p>
+          <JoinOurDiscordButton />
+        </div>
+      }
+    />
+  )
+}
+
+function JoinOurDiscordButton() {
+  return (
+    <div className="bg-gradient-to-r p-[1px] from-discordPurpleLight to-discordPurpleDark rounded-lg shadow-lg shadow-discord-purple-glow">
+      <GlowingButton
+        className="z-20 place-self-center"
+        color="bg-black"
+        borderColor="border-transparent"
+        glowColor=""
+        link="https://discord.gg/gTMch6Gn2u"
+        icon="/assets/icon-discord.svg"
+        text="JOIN OUR DISCORD"
+      />
     </div>
   )
 }
