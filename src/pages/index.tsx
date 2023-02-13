@@ -110,6 +110,7 @@ function LandingPageCards() {
       <CardLaunchFaster />
       <CardUseCases />
       <CardReinventingTheWheel />
+      <CardPoweredByOpenSource />
     </div>
   )
 }
@@ -171,7 +172,7 @@ function CardUseCases() {
             How will <span className="italic">you</span> change the world using Venice?
           </p>
           <br />
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
             <GreenBulletPoint greenText="Developers" whiteText="use Venice as a unified financial database for their teams & products" />
             <GreenBulletPoint
               greenText="Companies"
@@ -222,6 +223,38 @@ function CardReinventingTheWheel() {
       }
       imageName="card-launch-rocket"
       imageAlt="Let us do the heavy lifting, so you can focus on launching"
+    />
+  )
+}
+
+function CardPoweredByOpenSource() {
+  return (
+    <LandingPageCard
+      title="bring your own data source"
+      largeText="Powered by open source infrastructure."
+      body={
+        <>
+          <p>
+            Our community of open source developers believes in a world where financial data moves effortlessly from A to B, with the least amount of code
+            required.
+          </p>
+          <br />
+          <div className="flex flex-col gap-2">
+            <GreenBulletPoint greenText="Customize" whiteText="existing integrations, standing on the shoulders of giants who helped pave the way" />
+            <GreenBulletPoint
+              greenText="Extend"
+              whiteText="Venice by easily building new data pipelines that the whole community benefits from, seamlessly integrated into Venice's infrastructure"
+            />
+            <GreenBulletPoint greenText="Control" whiteText="how often Venice syncs data to save on cost or complexity" />
+            <GreenBulletPoint
+              greenText="Protect"
+              whiteText="your customer data by self-hosting Venice on-premise if needed and choosing where data is streamed into"
+            />
+          </div>
+        </>
+      }
+      imageName="card-open-source"
+      imageAlt="Venice is powered by the open source community"
     />
   )
 }
