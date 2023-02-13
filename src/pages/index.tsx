@@ -64,9 +64,7 @@ function HeroNavAndText() {
               <p className="inline leading-none">for developers</p>
             </div>
           </div>
-          <p className="text-base font-semibold leading-6 text-black-500">
-            Build in a weekend, and let us do the heavy lifting. Your customers will thank you.
-          </p>
+          <p className="font-semibold leading-6 text-black-500">Build in a weekend, and let us do the heavy lifting. Your customers will thank you.</p>
         </div>
       </div>
     </Container>
@@ -141,7 +139,7 @@ function LandingPageCard(props: LandingPageCardProps) {
               {props.title}
             </p>
             <p className="font-extrabold text-3xl md:text-5xl text-offwhite">{props.largeText}</p>
-            <div className="font-normal leading-5 m-0 text-sm md:text-base text-grayText">{props.body}</div>
+            <div className="font-normal leading-5 m-0 text-base text-grayText">{props.body}</div>
           </div>
           <div className="w-full items-center md:w-1/2 mt-4 md:mt-0 flex flex-col">
             <Image src={`/assets/${props.imageName}.png`} alt={props.imageAlt} width={397} height={387} />
@@ -158,7 +156,7 @@ function LandingPageCard(props: LandingPageCardProps) {
               {props.title}
             </p>
             <p className="font-extrabold text-3xl md:text-5xl text-offwhite">{props.largeText}</p>
-            <div className="mt-2 w-full font-normal leading-5 m-0 text-sm md:text-base text-grayText">{props.body}</div>
+            <div className="mt-2 w-full font-normal leading-5 m-0 text-base text-grayText">{props.body}</div>
           </div>
         </div>
       </div>
@@ -223,10 +221,8 @@ function GreenBulletPoint(props: GreenBulletPointProps) {
   return (
     <div className="flex gap-2">
       <BulletPoint />
-      <div className="w-full">
-        <p className="inline bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent w-full text-base font-bold leading-normal">
-          {props.greenText}
-        </p>
+      <div className="w-full text-base leading-normal">
+        <p className="inline bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent font-bold">{props.greenText}</p>
         <p className="inline"> {props.whiteText}</p>
       </div>
     </div>
