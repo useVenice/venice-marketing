@@ -223,7 +223,7 @@ function GreenBulletPoint(props: GreenBulletPointProps) {
   return (
     <div className="flex gap-2">
       <BulletPoint />
-      <div className="">
+      <div className="w-full">
         <p className="inline bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent w-full text-base font-bold leading-normal">
           {props.greenText}
         </p>
