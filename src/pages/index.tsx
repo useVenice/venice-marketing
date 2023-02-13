@@ -1,3 +1,4 @@
+import BulletPoint from '@/components/assets/BulletPoint'
 import GitHubLogoBlack from '@/components/assets/GitHubLogoBlack'
 import VeniceLogoBlack from '@/components/assets/VeniceLogoBlack'
 import {Container} from '@/components/Container'
@@ -9,15 +10,15 @@ import Link from 'next/link'
 
 export default function VeniceLandingPage() {
   return (
-    <div className="font-sans gap-8 inline-flex flex-col items-center bg-black-800 overflow-clip w-screen h-screen">
+    <div className="font-sans gap-8 inline-flex flex-col items-center bg-black-800 overflow-clip w-screen">
       <Head>
         <title>Venice - Financial data, for developers.</title>
       </Head>
       <HeroSection />
       <div className="px-4 max-w-screen-xl min-w-[320px]">
         <LandingPageCards />
-        <Footer />
       </div>
+      <Footer />
     </div>
   )
 }
@@ -105,8 +106,9 @@ function HeroCallToActionButton() {
 
 function LandingPageCards() {
   return (
-    <div className="mt-20 w-full flex items-start self-stretch">
+    <div className="mt-20 w-full h-full min-h-full flex flex-col flex-wrap gap-40">
       <CardLaunchFaster />
+      <CardUseCases />
     </div>
   )
 }
@@ -120,16 +122,16 @@ type LandingPageCardProps = {
 }
 function LandingPageCard(props: LandingPageCardProps) {
   return (
-    <div className="gap-40 flex flex-col items-start flex-grow">
+    <div className="flex flex-col">
       <div className="gap-4 md:mx-10 flex flex-col items-start self-stretch md:flex-row md:flex-no-wrap">
-        <div className="w-full md:w-1/3 md:ml-20 gap-2 md:gap-4 flex flex-col items-start justify-center self-stretch text-left">
-          <p className="bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent w-full text-xs md:text-sm font-extrabold tracking-widest uppercase leading-normal">
+        <div className="w-full md:w-1/2 md:ml-20 gap-2 md:gap-4 flex flex-col items-start justify-center self-stretch text-left">
+          <p className="bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent text-xs md:text-sm font-extrabold tracking-widest uppercase leading-normal">
             {props.title}
           </p>
           <p className="font-extrabold text-3xl md:text-5xl text-offwhite">{props.largeText}</p>
           <div className="font-normal leading-5 m-0 text-sm md:text-base text-grayText">{props.body}</div>
         </div>
-        <div className="w-full items-center md:w-2/3 flex flex-col">
+        <div className="w-full items-center md:w-1/2 mt-4 md:mt-0 flex flex-col">
           <Image src={`/assets/${props.imageName}.png`} alt={props.imageAlt} width={397} height={387} />
         </div>
       </div>
@@ -154,5 +156,52 @@ function CardLaunchFaster() {
       imageName="card-elt-pipelines"
       imageAlt="Venice ingests, normalizes, and unifies data into a single API"
     />
+  )
+}
+
+function CardUseCases() {
+  return (
+    <LandingPageCard
+      title="12,000+ data sources"
+      largeText="A billion possibilities."
+      body={
+        <>
+          <p>
+            How will <span className="italic">you</span> change the world using Venice?
+          </p>
+          <br />
+          <div className="flex flex-col gap-4">
+            <GreenBulletPoint greenText="Developers" whiteText="use Venice as a unified financial database for their teams & products" />
+            <GreenBulletPoint
+              greenText="Companies"
+              whiteText="use Venice to make data-driven decisions about their small-business customers & underwrite risk"
+            />
+            <GreenBulletPoint greenText="Data analysts" whiteText="use Venice to consolidate revenue & reporting into a single source of truth" />
+            <GreenBulletPoint greenText="Personal finance geeks" whiteText="use Venice to keep their spreadsheets up-to-date & build wealth faster" />
+            <GreenBulletPoint greenText="Finance teams" whiteText="use Venice to remove hours of manual data updates & avoid costly mistakes" />
+          </div>
+        </>
+      }
+      imageName="card-use-cases"
+      imageAlt="Venice gives you superpowers"
+    />
+  )
+}
+
+type GreenBulletPointProps = {
+  greenText: string
+  whiteText: string
+}
+function GreenBulletPoint(props: GreenBulletPointProps) {
+  return (
+    <div className="flex gap-2">
+      <BulletPoint />
+      <div className="">
+        <p className="inline bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent w-full text-base font-bold leading-normal">
+          {props.greenText}
+        </p>
+        <p className="inline"> {props.whiteText}</p>
+      </div>
+    </div>
   )
 }

@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export function Footer() {
   return (
-    <div className="bg-footer-black h-40 mt-20 sticky top-[100vh]">
-      <div className="container p-14 max-w-screen-md">
+    <div className="bg-footerBlack h-40 mt-20 sticky top-[100vh] w-screen">
+      <div className="container md:py-14 p-8 max-w-screen-lg">
         <div className="flex justify-between">
           <Link href="/">
             <Image src="/assets/venice-logo-offwhite.svg" alt="Venice Logo" width={102} height={32} />
