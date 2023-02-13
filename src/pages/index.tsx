@@ -87,17 +87,23 @@ function HeroNavigation() {
 function HeroCallToActionButton() {
   return (
     <div className="z-20 -mt-[9.4rem] w-full text-white gap-6 flex flex-col justify-center items-center self-stretch">
-      <div className="bg-gradient-to-r p-[1px] from-green to-yellow rounded-lg shadow-lg shadow-green">
-        <GlowingButton
-          className="z-20 place-self-center"
-          color="bg-black"
-          borderColor="border-transparent"
-          glowColor=""
-          link="/early-access/apply"
-          icon="/assets/icon-rocket.svg"
-          text="GET EARLY ACCESS"
-        />
-      </div>
+      <GetEarlyAccessButton />
+    </div>
+  )
+}
+
+function GetEarlyAccessButton() {
+  return (
+    <div className="bg-gradient-to-r p-[1px] from-green to-yellow rounded-lg shadow-lg shadow-green">
+      <GlowingButton
+        className="z-20 place-self-center"
+        color="bg-black"
+        borderColor="border-transparent"
+        glowColor=""
+        link="/early-access/apply"
+        icon="/assets/icon-rocket.svg"
+        text="GET EARLY ACCESS"
+      />
     </div>
   )
 }
@@ -112,6 +118,7 @@ function LandingPageCards() {
       <CardReinventingTheWheel />
       <CardPoweredByOpenSource />
       <CardHostedPlaid />
+      <CardTimeIsMoney />
     </div>
   )
 }
@@ -120,26 +127,42 @@ type LandingPageCardProps = {
   title: string
   largeText: string
   body: React.ReactNode
-  imageName: string
-  imageAlt: string
+  imageName?: string
+  imageAlt?: string
 }
 function LandingPageCard(props: LandingPageCardProps) {
-  return (
-    <div className="flex flex-col">
-      <div className="gap-4 md:mx-10 flex flex-col items-start self-stretch md:flex-row md:flex-no-wrap">
-        <div className="w-full md:w-1/2 md:ml-20 gap-2 md:gap-4 flex flex-col items-start justify-center self-stretch text-left">
-          <p className="bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent text-xs md:text-sm font-extrabold tracking-widest uppercase leading-normal">
-            {props.title}
-          </p>
-          <p className="font-extrabold text-3xl md:text-5xl text-offwhite">{props.largeText}</p>
-          <div className="font-normal leading-5 m-0 text-sm md:text-base text-grayText">{props.body}</div>
-        </div>
-        <div className="w-full items-center md:w-1/2 mt-4 md:mt-0 flex flex-col">
-          <Image src={`/assets/${props.imageName}.png`} alt={props.imageAlt} width={397} height={387} />
+  if (props.imageName && props.imageAlt) {
+    return (
+      <div className="flex flex-col">
+        <div className="gap-4 md:mx-10 flex flex-col items-start self-stretch md:flex-row md:flex-no-wrap">
+          <div className="w-full md:w-1/2 md:ml-20 gap-2 md:gap-4 flex flex-col items-start justify-center self-stretch text-left">
+            <p className="bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent text-xs md:text-sm font-extrabold tracking-widest uppercase leading-normal">
+              {props.title}
+            </p>
+            <p className="font-extrabold text-3xl md:text-5xl text-offwhite">{props.largeText}</p>
+            <div className="font-normal leading-5 m-0 text-sm md:text-base text-grayText">{props.body}</div>
+          </div>
+          <div className="w-full items-center md:w-1/2 mt-4 md:mt-0 flex flex-col">
+            <Image src={`/assets/${props.imageName}.png`} alt={props.imageAlt} width={397} height={387} />
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  } else {
+    return (
+      <div className="max-w-screen-md mx-auto flex flex-col">
+        <div className="gap-4 md:mx-10 flex flex-col items-start self-stretch md:flex-row md:flex-no-wrap">
+          <div className="w-full md:ml-20 gap-2 md:gap-4 flex flex-col items-start justify-center self-stretch text-left">
+            <p className="bg-gradient-to-r from-green to-yellow bg-clip-text text-transparent text-xs md:text-sm font-extrabold tracking-widest uppercase leading-normal">
+              {props.title}
+            </p>
+            <p className="font-extrabold text-3xl md:text-5xl text-offwhite">{props.largeText}</p>
+            <div className="mt-2 w-full font-normal leading-5 m-0 text-sm md:text-base text-grayText">{props.body}</div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
 function CardLaunchFaster() {
@@ -278,6 +301,20 @@ function CardHostedPlaid() {
       }
       imageName="card-plaid-as-a-service"
       imageAlt="Get Plaid data in minutes, with zero setup"
+    />
+  )
+}
+
+function CardTimeIsMoney() {
+  return (
+    <LandingPageCard
+      title="time is money"
+      largeText="Let's save you plenty of both."
+      body={
+        <div className="w-full gap-6 flex flex-col justify-center items-center self-stretch">
+          <GetEarlyAccessButton />
+        </div>
+      }
     />
   )
 }
