@@ -6,6 +6,7 @@ export type GlowingButtonProps = {
   link?: any
   color?: string
   glowColor?: string
+  borderColor?: string
   icon?: string
   text: string
   displayArrow?: Boolean
@@ -14,8 +15,9 @@ export type GlowingButtonProps = {
 }
 
 const defaultProps = {
-  color: 'bg-venice-green',
+  color: 'bg-green',
   glowColor: 'shadow-venice-green-glow',
+  borderColor: 'border-inner-bevel',
   displayArrow: true,
   isSubmit: false,
 }
@@ -41,11 +43,9 @@ function glowingButton(props: GlowingButtonProps) {
   return (
     <button
       type={props.isSubmit ? 'submit' : undefined}
-      className={`flex py-1.5 ${props.displayArrow ? 'pl-3 pr-1' : 'px-2'} border border-venice-inner-bevel rounded-lg ${props.color} shadow-lg ${
-        props.glowColor
-      }`}>
+      className={`flex py-1.5 ${props.displayArrow ? 'pl-3 pr-1' : 'px-2'} border ${props.borderColor} rounded-lg ${props.color} shadow-lg ${props.glowColor}`}>
       {icon}
-      <span className="mt-[3px] font-sans text-[13px] text-venice-white">{props.text}</span>
+      <span className="mt-[3px] font-sans text-[13px] text-white">{props.text}</span>
       {arrow}
     </button>
   )

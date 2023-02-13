@@ -1,18 +1,22 @@
+import GitHubLogoBlack from '@/components/assets/GitHubLogoBlack'
+import VeniceLogoBlack from '@/components/assets/VeniceLogoBlack'
+import {Container} from '@/components/Container'
 import {Footer} from '@/components/Footer'
 import {GlowingButton} from '@/components/GlowingButton'
-import {Navigation} from '@/components/Navigation'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function VeniceLandingPage() {
   return (
-    <div className="gap-8 inline-flex flex-col items-center bg-venice-black-800 overflow-clip w-screen h-screen">
+    <div className="font-sans gap-8 inline-flex flex-col items-center bg-black-800 overflow-clip w-screen h-screen">
       <Head>
         <title>Venice - Financial data, for developers.</title>
       </Head>
-      <Navigation />
       <HeroSection />
-      <Footer />
+      <Container>
+        <Footer />
+      </Container>
     </div>
   )
 }
@@ -21,28 +25,76 @@ export default function VeniceLandingPage() {
 
 function HeroSection() {
   return (
-    <div className="mt-10 lg:mt-20">
-      <div className="flex justify-between">
-        <div className="font-inter font-bold text-3xl md:text-5xl lg:text-6xl leading-tight min-w-[220px]">
-          <span className="text-venice-green">Unified </span>
-          <br />
-          <span className="text-venice-offwhite">access to </span>
-          <br />
-          <span className="text-venice-green">financial data</span>
-          <div className="min-w-[220px] min-h-[23px] max-h-[23px] relative h-auto pr-2 md:mt-2">
-            <Image fill src="/assets/hero-underline.svg" alt="Underline" style={{height: '100%', width: '100%'}} />
+    <>
+      <div className="z-0 h-[487px] min-w-[320px] w-screen flex justify-center items-center">
+        <div
+          className="w-screen h-full text-left bg-gradient-to-r from-green to-yellow object-cover"
+          style={{
+            maskImage: 'url(/assets/hero-mask.png)',
+            maskSize: '100% 100%',
+            maskRepeat: 'no-repeat',
+            WebkitMaskImage: 'url(/assets/hero-mask.png)',
+            WebkitMaskSize: '100% 100%',
+            WebkitMaskRepeat: 'no-repeat',
+          }}>
+          <div className="bg-repeat-x bg-bottom w-full h-full" style={{backgroundImage: 'url("/assets/hero-dots.svg")'}}>
+            <HeroNavAndText />
           </div>
         </div>
-        <Image className="md:pl-2 mr-4 mb-4" src="/assets/unified-db-flow.svg" alt="Venice is the backend for finance" width={312} height={208} />
       </div>
-      <>
-        <p className="font-sans font-light text-lg md:text-2xl text-venice-offwhite mt-4 lg:mt-10">
-          Save weeks with the open-source data infrastructure trusted by data analysts, personal finance geeks, and developers to unify & access their finances
-          in the most powerful & flexible ways.
-        </p>
-      </>
-      <div className="grid grid-cols-1 mt-10">
-        <GlowingButton className="place-self-center" link="/early-access/apply" icon="/assets/icon-rocket.svg" text="GET EARLY ACCESS" />
+      <HeroCallToActionButton />
+    </>
+  )
+}
+
+function HeroNavAndText() {
+  return (
+    <Container>
+      <div className="mt-12 gap-8 flex flex-col justify-center items-start">
+        <HeroNavigation />
+        <div className="gap-6 flex flex-col items-start md:mx-20">
+          <div className="font-extrabold">
+            <div className="text-4xl md:text-5xl text-black">
+              <p className="inline leading-none">Frictionless</p>
+              <br />
+              <p className="inline text-offwhite bg-black rounded-lg py-0 px-2 leading-snug">financial data</p>
+              <br />
+              <p className="inline leading-none">for developers</p>
+            </div>
+          </div>
+          <p className="text-base font-semibold leading-6 text-black-500">
+            Build in a weekend, and let us do the heavy lifting. Your customers will thank you.
+          </p>
+        </div>
+      </div>
+    </Container>
+  )
+}
+
+function HeroNavigation() {
+  return (
+    <div className="w-full flex items-center justify-between">
+      <VeniceLogoBlack />
+      <Link href="https://github.com/useVenice/venice" target="_blank">
+        <GitHubLogoBlack />
+      </Link>
+    </div>
+  )
+}
+
+function HeroCallToActionButton() {
+  return (
+    <div className="z-20 -mt-[9.4rem] w-full text-white gap-6 flex flex-col justify-center items-center self-stretch">
+      <div className="bg-gradient-to-r p-[1px] from-green to-yellow rounded-lg shadow-lg shadow-green">
+        <GlowingButton
+          className="z-20 place-self-center"
+          color="bg-black"
+          borderColor="border-transparent"
+          glowColor=""
+          link="/early-access/apply"
+          icon="/assets/icon-rocket.svg"
+          text="GET EARLY ACCESS"
+        />
       </div>
     </div>
   )

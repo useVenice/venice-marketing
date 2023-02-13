@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export function Footer() {
   return (
-    <div className="bg-venice-footer-black h-40 mt-20 sticky top-[100vh]">
+    <div className="bg-footer-black h-40 mt-20 sticky top-[100vh]">
       <div className="container p-14 max-w-screen-md">
         <div className="flex justify-between">
           <Link href="/">

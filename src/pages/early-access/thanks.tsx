@@ -17,8 +17,8 @@ export default function ThanksForApplying() {
         <div className="mt-14 grid grid-cols-1">
           <Image src="/assets/rocket-takeoff.svg" alt="Thank you!" className="place-self-center" width={80} height={80} />
           <div className="place-self-center max-w-lg mt-2 grid grid-cols-1">
-            <p className="text-center mt-6 font-sans font-medium text-md md:text-2xl text-venice-green">We’ll be in touch soon!</p>
-            <p className="text-center mt-6 font-sans font-light text-sm md:text-lg text-venice-offwhite">
+            <p className="text-center mt-6 font-sans font-medium text-md md:text-2xl text-green">We’ll be in touch soon!</p>
+            <p className="text-center mt-6 font-sans font-light text-sm md:text-lg text-offwhite">
               Available invites to Venice are going fast!
               <br />
               <br />

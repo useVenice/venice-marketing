@@ -25,7 +25,7 @@ export default function ApplyForEarlyAccess() {
       <Navigation />
       <Container>
         <div className="mt-20 min-w-[200px]">
-          <p className="mt-6 font-sans font-medium text-md md:text-2xl text-venice-green">Apply for early access</p>
+          <p className="mt-6 font-sans font-medium text-md md:text-2xl text-green">Apply for early access</p>
           <iframe
             data-tally-src="https://tally.so/embed/me58JQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
             loading="lazy"
