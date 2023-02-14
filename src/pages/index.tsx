@@ -111,11 +111,11 @@ function GetEarlyAccessButton() {
 function LandingPageCards() {
   return (
     <div className="mt-20 w-full h-full min-h-full flex flex-col flex-wrap gap-40">
+      <CardHostedPlaid />
       <CardLaunchFaster />
       <CardUseCases />
       <CardReinventingTheWheel />
       <CardPoweredByOpenSource />
-      <CardHostedPlaid />
       <CardTimeIsMoney />
       <CardJoinOurCommunity />
     </div>
@@ -293,7 +293,8 @@ function CardHostedPlaid() {
           Let us handle the infrastructure, streaming, schema transformations, API upgrades, webhook callbacks, and maintenance headaches.
           <br />
           <br />
-          Venice&apos;s unified API ensures you never need to learn more than one data schema, regardless of how many data sources you connect to.
+          As your needs expand beyond banking, Venice&apos;s unified API ensures you never need to learn more than one data schema, regardless of how many data
+          sources you connect to.
         </p>
       }
       imageName="card-plaid-as-a-service"
