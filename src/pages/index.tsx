@@ -4,6 +4,7 @@ import VeniceLogoBlack from '@/components/assets/VeniceLogoBlack'
 import {Container} from '@/components/Container'
 import {Footer} from '@/components/Footer'
 import {GlowingButton} from '@/components/GlowingButton'
+import {TextAnimation} from '@/components/TextAnimation'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -55,14 +56,10 @@ function HeroNavAndText() {
       <div className="mt-12 gap-8 flex flex-col justify-center items-start">
         <HeroNavigation />
         <div className="gap-6 flex flex-col items-start md:mx-20">
-          <div className="font-extrabold">
-            <div className="text-4xl md:text-5xl text-black">
-              <p className="inline leading-none">Frictionless</p>
-              <br />
-              <p className="inline text-offwhite bg-black rounded-lg py-0 px-2 leading-snug">financial data</p>
-              <br />
-              <p className="inline leading-none">for developers</p>
-            </div>
+          <div className="font-extrabold text-4xl md:text-5xl text-black">
+            <TextAnimation className="justify-start leading-none" intervalMs={4000} textValues={['Frictionless', 'Open source', 'Unified', 'Extensible']} />
+            <p className="text-offwhite bg-black rounded-lg py-0 px-2 leading-snug">financial data</p>
+            <p className="leading-none">for developers</p>
           </div>
           <p className="text-base font-semibold leading-6 text-black-500">
             Build in a weekend, and let us do the heavy lifting. Your customers will thank you.

@@ -12,3 +12,35 @@
     background-color: var(--venice-black-body);
   }
 }
+
+.text-animation-container {
+  display: grid;
+  grid-area: content;
+}
+
+.text-animation {
+  grid-area: content;
+  user-select: none;
+}
+
+.text-animation-enter {
+  opacity: 0;
+  transform: translate3d(0, 50%, 0);
+}
+
+.text-animation-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0);
+  transition: opacity 360ms ease-in-out, transform 360ms ease-in-out;
+}
+
+.text-animation-exit {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0);
+}
+
+.text-animation-exit-active {
+  opacity: 0;
+  transform: translate3d(0, -50%, 0);
+  transition: opacity 360ms ease-in-out, transform 360ms ease-in-out;
+}
