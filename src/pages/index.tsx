@@ -98,7 +98,7 @@ function GetEarlyAccessButton() {
         color="bg-black"
         borderColor="border-transparent"
         glowColor=""
-        link="/early-access/apply"
+        link="https://app.venice.is"
         icon="/assets/icon-rocket.svg"
         text="GET EARLY ACCESS"
       />
